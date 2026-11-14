@@ -1,6 +1,7 @@
 # MasterThesis
 This repository is an R-based data processing and analysis repository for my Master's thesis called "Beyond Screen Time: Self-Reported and Trace-Based Measures of Compulsive TikTok Use".
 
+This thesis investigates how compulsive TikTok use is reflected in users' behavioral patterns, going beyond traditional screen-time measures to examine session duration, time between sessions, and content diversity. By combining self-reported survey responses with anonymized TikTok data donations and video metadata, the study reconstructs users'  platform activity and examines how compulsive use moderates relationships between behavioral engagement measures. In addition, this thesis explores if self-reported and trace-based TikTok use measures show different associations with compulsive use. This repository includes R and Python scripts for data matching, cleaning, session calculation, metadata enrichment, variable calculation, descriptive analysis and hypothesis testing. 
 Please find below all the information necessary to replicate this Master's thesis:
 
 ## Repository Structure
