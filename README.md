@@ -1,24 +1,29 @@
 # MasterThesis
-This repository is an R-based data processing and analysis repository for my Master's thesis examining Self-Reported and Trace-Based Measures of Compulsive TikTok Use.
+This repository is an R-based data processing and analysis repository for my Master's thesis called "Beyond Screen Time: Self-Reported and Trace-Based Measures of Compulsive TikTok Use".
 
 Please find below all the information necessary to replicate this Master's thesis:
 
 ## Repository Structure
 
 ```text
+
 MasterThesis/
 |
+|-- 1_matching_data.R
+|-- 2_survey_based_variable_calculations.R
+|-- 3_trace_based_variable_calculations.R
+|-- 4_data_enrichment_with_pyktok.py
+|-- 5_calculating_content_diversity.R
+|-- 6_preparing_analysis_data.R
+|-- 7_descriptive_analysis.R
+|-- 8_model_testing.R
+|
 |-- data_raw/
-|   |-- survey/
-|   |   `-- ...csv
-|   |
-|   `-- donations/
-|       |-- ...json
-|       `-- ...
 |
 |-- data_processed/
 |
-`-- analysis.R
+`-- results/
+
 ```
 
 ### Some notes about the Repository Structure:
@@ -29,8 +34,57 @@ MasterThesis/
 
 *data_processed/* contains datasets generated after cleaning, transforming, and combining the raw data.
 
-*analysis.R* contains the R code for importing, cleaning, processing, constructing variables, and analyzing the data.
+*results/* contains the 2 folders inside. *results/descriptives_outputs* contains all figures and tables created for reporting. *results/regression_outputs* contains the results of hypothesis testing.
 
-#### The project requires the following R packages: "tidyverse", "jsonlite", "lubridate","psych".
+This project uses R and Python for processing TikTok data donations,calculating behavioral variables, enriching video metadata,
+performing descriptive analyses, and testing hypotheses.
 
-To replicate this study, please clone the repository, install the required packages, maintain the folder structure shown above, and run analysis.R from the project root directory. 
+### Required R packages:
+
+The following R packages are required:
+
+- dplyr
+- tidyr
+- jsonlite
+- ggplot2
+- gt
+- psych
+- webshot2
+- fixest
+
+Install all required R packages by running:
+
+```r
+install.packages(c(
+  "dplyr",
+  "tidyr",
+  "jsonlite",
+  "ggplot2",
+  "gt",
+  "psych",
+  "webshot2",
+  "fixest"
+))
+```
+
+### Required Python packages:
+
+The Python metadata enrichment script requires:
+
+- requests
+- beautifulsoup4
+
+Install the required packages using:
+
+```bash
+python3 -m pip install requests beautifulsoup4
+```
+
+### Additional Requirements:
+
+- R and Python must be installed.
+- Google Chrome or another compatible Chromium browser may be
+  required to export formatted gt tables as PNG images.
+- An internet connection is required for retrieving TikTok video metadata.
+
+To replicate this study, please clone the repository, install the required packages, maintain the folder structure shown above, and run the R and Python scripts from the project root directory. 
